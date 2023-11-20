@@ -35,28 +35,19 @@ public class Fuerza_Bruta {
 
         int[][] matriz = new int[(n - 1)][n];
 
-        // Generar la secuencia de números consecutivos
-        int[] secuencia = new int[n];
-        for (int i = 0; i < n; i++) {
-            secuencia[i] = i + 1;
-        }
-
-        // Mezclar la secuencia para evitar repeticiones
-        Random rand = new Random();
-        for (int i = matriz.length - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 2);
-            // Intercambiar elementos
-            int temp = secuencia[i];
-            secuencia[i % n] = secuencia[j % n];
-            secuencia[j % n] = temp;
-        }
 
         // Llenar la matriz con la secuencia generada
         for (int i = 0; i < (n-1); i++) {
             for (int j = 0; j < n; j++) {
+                // al ingresar 4 debe de evitar la secuencia 1,2,3,4
+
                 int numero = (i % 2 == 0) ? j + 1 : n - j;
                 while (yaEstaEnLaColumna(matriz, j, numero)) {
                     // Si el número ya está en la columna, intentar con otro
+                    numero = (numero % n) + 1;
+                }
+                while (yaEstaEnLaFila(matriz, i, numero)) {
+                    // Si el número ya está en la fila, intentar con otro
                     numero = (numero % n) + 1;
                 }
                 matriz[i][j] = numero;
@@ -66,12 +57,20 @@ public class Fuerza_Bruta {
         return matriz;
     }
 
-
-
     // Método para verificar si un número ya está en una columna
     private static boolean yaEstaEnLaColumna(int[][] matriz, int columna, int numero) {
         for (int i = 0; i < matriz.length; i++) {
             if (matriz[i][columna] == numero) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Método para verificar si un número ya está en una Fila
+    private static boolean yaEstaEnLaFila(int[][] matriz, int Fila, int numero) {
+        for (int j = 0; j < matriz.length; j++) {
+            if (matriz[Fila][j] == numero) {
                 return true;
             }
         }
