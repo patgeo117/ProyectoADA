@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88734769-10b7-485e-9f04-bab151ded8a2" name="Changes" comment="prueba">
+    <list default="true" id="88734769-10b7-485e-9f04-bab151ded8a2" name="Changes" comment="prueba 2.0">
+      <change afterPath="$PROJECT_DIR$/src/FuerzaBruta/Calendario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FuerzaBruta/Fuerza_Bruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FuerzaBruta/Fuerza_Bruta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,8 @@
       <workItem from="1700433859330" duration="6684000" />
       <workItem from="1700493523319" duration="6799000" />
       <workItem from="1700500604827" duration="718000" />
-      <workItem from="1700604292662" duration="1534000" />
+      <workItem from="1700604292662" duration="2386000" />
+      <workItem from="1700745974089" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -107,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700496088023</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="prueba 2.0">
+      <option name="closed" value="true" />
+      <created>1700606297344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700606297344</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba" />
+    <MESSAGE value="prueba 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="prueba 2.0" />
   </component>
 </project>
