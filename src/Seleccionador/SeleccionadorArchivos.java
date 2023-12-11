@@ -58,16 +58,21 @@ public class SeleccionadorArchivos extends JFrame {
     // Método para leer y procesar el archivo
     private void leerArchivo(File archivo) throws DatosInvalidosException {
         try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
+            // Leer la primera línea para obtener el número de equipos (n)
             int n = Integer.parseInt(lector.readLine());
+            // Leer la segunda línea para obtener el tamaño mínimo de gira o permanencia (Mínimo)
             int minimo = Integer.parseInt(lector.readLine());
+            // Leer la tercera línea para obtener el tamaño máximo de gira o permanencia (Máximo)
             int maximo = Integer.parseInt(lector.readLine());
 
             System.out.println("Número de equipos: " + n);
             System.out.println("Tamaño mínimo: " + minimo);
             System.out.println("Tamaño máximo: " + maximo);
 
+            // Inicializar una matriz para almacenar las distancias entre las ciudades sedes
             int[][] distancias = new int[n][n];
             System.out.println("Matriz de distancias:");
+            // Leer las siguientes n líneas para llenar la matriz de distancias
             for (int i = 0; i < n; i++) {
                 String[] valores = lector.readLine().split(" ");
                 for (int j = 0; j < n; j++) {
@@ -78,14 +83,17 @@ public class SeleccionadorArchivos extends JFrame {
             }
 
         } catch (NumberFormatException e) {
+            // Manejar la excepción si ocurre un error al convertir datos a números
             manejarExcepcion(new DatosInvalidosException("Error: Los datos no son válidos."));
         } catch (Exception e) {
+            // Manejar una excepción general si ocurre algún otro error al procesar el archivo
             manejarExcepcion(new DatosInvalidosException("Error desconocido al procesar el archivo."));
         }
     }
 
     // Manejar excepción
     private void manejarExcepcion(DatosInvalidosException ex) {
+        // Imprimir el mensaje de la excepción y la traza de la pila
         System.err.println(ex.getMessage());
         ex.printStackTrace();
     }
@@ -99,6 +107,7 @@ public class SeleccionadorArchivos extends JFrame {
 
     // Método principal para iniciar la aplicación
     public static void main(String[] args) {
+        // Iniciar la aplicación en el hilo de despacho de eventos de Swing
         SwingUtilities.invokeLater(() -> new SeleccionadorArchivos());
     }
 }

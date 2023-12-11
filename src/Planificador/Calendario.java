@@ -1,4 +1,4 @@
-package FuerzaBruta;
+package Planificador;
 
 import java.util.Scanner;
 
