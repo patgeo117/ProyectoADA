@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88734769-10b7-485e-9f04-bab151ded8a2" name="Changes" comment="prueba 2.0">
-      <change afterPath="$PROJECT_DIR$/src/FuerzaBruta/Calendario.java" afterDir="false" />
+    <list default="true" id="88734769-10b7-485e-9f04-bab151ded8a2" name="Changes" comment="prueba 3.0">
+      <change afterPath="$PROJECT_DIR$/src/Seleccionador/SeleccionadorArchivos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FuerzaBruta/Calendario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FuerzaBruta/Calendario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +33,81 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Calendario.executor": "Run",
+    "Application.SeleccionadorArchivos.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager" selected="Application.SeleccionadorArchivos">
+    <configuration name="Calendario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FuerzaBruta.Calendario" />
+      <module name="ProyectoADA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FuerzaBruta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Fuerza_Bruta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FuerzaBruta.Fuerza_Bruta" />
+      <module name="ProyectoADA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FuerzaBruta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeleccionadorArchivos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Seleccionador.SeleccionadorArchivos" />
+      <module name="ProyectoADA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Seleccionador.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SeleccionadorArchivos" />
+        <item itemvalue="Application.Calendario" />
+        <item itemvalue="Application.Fuerza_Bruta" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-20.0.2-corretto-20.0.2.1-3183f394aec4-907a2361" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +121,11 @@
       <workItem from="1700493523319" duration="6799000" />
       <workItem from="1700500604827" duration="718000" />
       <workItem from="1700604292662" duration="2386000" />
-      <workItem from="1700745974089" duration="424000" />
+      <workItem from="1700745974089" duration="531000" />
+      <workItem from="1700746517871" duration="5520000" />
+      <workItem from="1700752096860" duration="35000" />
+      <workItem from="1702307046772" duration="147000" />
+      <workItem from="1702307490819" duration="1449000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -116,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700606297344</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="prueba 3.0">
+      <option name="closed" value="true" />
+      <created>1700746476141</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700746476141</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +212,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="prueba" />
     <MESSAGE value="prueba 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba 2.0" />
+    <MESSAGE value="prueba 3.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="prueba 3.0" />
   </component>
 </project>
