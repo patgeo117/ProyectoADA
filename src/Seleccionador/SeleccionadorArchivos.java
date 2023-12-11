@@ -12,63 +12,60 @@ public class SeleccionadorArchivos extends JFrame {
 
     // Constructor de la clase
     public SeleccionadorArchivos() {
-        // Configurar la ventana
-        setTitle("Seleccionador de Archivos");  // Establecer el título de la ventana
-        setSize(400, 200);  // Establecer el tamaño de la ventana
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Configurar la operación de cierre al hacer clic en la "X"
+        configurarVentana();
+        agregarBotonAbrirArchivo();
+        mostrarVentana();
+    }
 
-        // Crear un botón para abrir el selector de archivos
+    // Configurar la ventana
+    private void configurarVentana() {
+        setTitle("Seleccionador de Archivos");
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    // Agregar el botón para abrir el selector de archivos
+    private void agregarBotonAbrirArchivo() {
         JButton abrirBoton = new JButton("Abrir Archivo");
         abrirBoton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                seleccionarArchivo();  // Llamar al método para seleccionar el archivo cuando se hace clic en el botón
+                try {
+                    seleccionarArchivo();
+                } catch (DatosInvalidosException ex) {
+                    manejarExcepcion(ex);
+                }
             }
         });
-
-        // Agregar el botón a la ventana
         add(abrirBoton);
+    }
 
-        // Mostrar la ventana
+    // Mostrar la ventana
+    private void mostrarVentana() {
         setVisible(true);
     }
 
     // Método para abrir el selector de archivos
-    private void seleccionarArchivo() {
-        // Crear un selector de archivos
+    private void seleccionarArchivo() throws DatosInvalidosException {
         JFileChooser fileChooser = new JFileChooser();
-
-        // Mostrar el diálogo de selección de archivos
         int resultado = fileChooser.showOpenDialog(this);
 
-        // Procesar el resultado del diálogo
         if (resultado == JFileChooser.APPROVE_OPTION) {
-            // Obtener el archivo seleccionado
             File archivo = fileChooser.getSelectedFile();
-
-            // Procesar el archivo
-            leerArchivo(archivo);  // Llamar al método para leer y procesar el archivo
+            leerArchivo(archivo);
         }
     }
 
     // Método para leer y procesar el archivo
-    private void leerArchivo(File archivo) {
-        try {
-            // Crear un lector de archivos
-            BufferedReader lector = new BufferedReader(new FileReader(archivo));
-
-            // Leer el número de equipos (n)
+    private void leerArchivo(File archivo) throws DatosInvalidosException {
+        try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
             int n = Integer.parseInt(lector.readLine());
-            System.out.println("Número de equipos: " + n);
-
-            // Leer el tamaño mínimo de gira o permanencia (Mínimo)
             int minimo = Integer.parseInt(lector.readLine());
-            System.out.println("Tamaño mínimo: " + minimo);
-
-            // Leer el tamaño máximo de gira o permanencia (Máximo)
             int maximo = Integer.parseInt(lector.readLine());
+
+            System.out.println("Número de equipos: " + n);
+            System.out.println("Tamaño mínimo: " + minimo);
             System.out.println("Tamaño máximo: " + maximo);
 
-            // Leer la matriz de distancias
             int[][] distancias = new int[n][n];
             System.out.println("Matriz de distancias:");
             for (int i = 0; i < n; i++) {
@@ -80,19 +77,28 @@ public class SeleccionadorArchivos extends JFrame {
                 System.out.println();
             }
 
-            // Cerrar el lector
-            lector.close();
+        } catch (NumberFormatException e) {
+            manejarExcepcion(new DatosInvalidosException("Error: Los datos no son válidos."));
         } catch (Exception e) {
-            e.printStackTrace();  // Imprimir la traza de la pila en caso de excepción
+            manejarExcepcion(new DatosInvalidosException("Error desconocido al procesar el archivo."));
+        }
+    }
+
+    // Manejar excepción
+    private void manejarExcepcion(DatosInvalidosException ex) {
+        System.err.println(ex.getMessage());
+        ex.printStackTrace();
+    }
+
+    // Definición de la excepción personalizada
+    class DatosInvalidosException extends Exception {
+        public DatosInvalidosException(String mensaje) {
+            super(mensaje);
         }
     }
 
     // Método principal para iniciar la aplicación
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new SeleccionadorArchivos();  // Crear una instancia de la clase principal
-            }
-        });
+        SwingUtilities.invokeLater(() -> new SeleccionadorArchivos());
     }
 }
